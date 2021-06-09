@@ -7,6 +7,7 @@ const forecast = require('./utils/forecast.js');
 
 //EXPRESS AND PATH DECLARATIONS
 const app = express(); 
+const port = process.env.PORT || 3000; //IF OR shorthand
 const viewsPath = path.join(__dirname,'../templates/views');
 const partialsPath = path.join(__dirname,'../templates/partials')
 const staticPages = path.join(__dirname,"../public");
@@ -84,7 +85,7 @@ app.get('*',(req,res)=>{
 })
 
 //SERVER LISTENING
-app.listen(3000, (response)=> {
+app.listen(port, ()=> {
     console.log("Server Running Port 3000");
 });
 
